@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Deep Web</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #0d0d0d;
+      color: #ff0000;
+    }
+    nav, .subnav {
+      display: flex;
+      background-color: #1a0000;
+      padding: 10px;
+      justify-content: space-around;
+    }
+    nav button, .subnav button {
+      background-color: #330000;
+      color: #ff0000;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .tab, .subtab {
+      display: none;
+      padding: 20px;
+    }
+    .active {
+      display: block;
+    }
+    .chat-area textarea {
+      width: 100%;
+      height: 150px;
+      background-color: #1a1a1a;
+      color: #ff0000;
+      border: 1px solid #660000;
+    }
+    .chat-area button {
+      background-color: #660000;
+      color: white;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      cursor: pointer;
+    }
+    .video-area iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+    }
+    .shop-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .shop-item {
+      background-color: #1a1a1a;
+      padding: 10px;
+      text-align: center;
+    }
+    .shop-item img {
+      width: 100%;
+      height: auto;
+    }
+    .shop-item button {
+      margin-top: 10px;
+      background-color: #660000;
+      color: white;
+      border: none;
+      padding: 5px;
+      cursor: pointer;
+    }
+    #overlay-message {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.95);
+      color: red;
+      font-size: 2em;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      z-index: 9999;
+    }
+    ul.terror-list {
+      margin-top: 20px;
+      padding-left: 20px;
+      color: #ff0000;
+      list-style: square;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <button onclick="showTab('main')">Principal</button>
+    <button onclick="showTab('shop')">Compras</button>
+  </nav>
+
+  <div class="subnav" id="main-subnav">
+    <button onclick="showSubTab('inicio')">Inicio</button>
+    <button onclick="showSubTab('multimedia')">Multimedia</button>
+    <button onclick="showSubTab('mensaje')">Mensaje</button>
+    <button onclick="showSubTab('comentarios')">Comentarios</button>
+  </div>
+
+  <div class="subnav" id="shop-subnav" style="display:none;">
+    <button onclick="showSubTab('payasos')">Payasos</button>
+    <button onclick="showSubTab('monstruos')">Monstruos</button>
+  </div>
+
+  <div id="main" class="tab active">
+    <div id="inicio" class="subtab active">
+      <h1>Bienvenido a la Deep Web</h1>
+      <p>Prepárate para lo desconocido...</p>
+    </div>
+
+    <div id="multimedia" class="subtab">
+      <h2>Multimedia Deep Web</h2>
+      <div class="video-area">
+        <button onclick="showOverlay('Sistema operativo no permitido')">Ver Video</button>
+
+        <!-- 🔧 CREADOR: Puedes agregar más videos aquí
+             Ejemplo:
+             <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+        -->
+      </div>
+    </div>
+
+    <div id="mensaje" class="subtab">
+      <h2>Mensajes</h2>
+      <div class="chat-area">
+        <textarea placeholder="Escribe tu mensaje..."></textarea>
+        <button onclick="alert('Mensaje enviado')">Enviar mensaje</button>
+      </div>
+    </div>
+
+    <div id="comentarios" class="subtab">
+      <h2>Comentarios Terroríficos</h2>
+      <div class="chat-area">
+        <textarea id="comentarioInput" placeholder="Escribe tu mensaje terrorífico..."></textarea>
+        <button onclick="agregarComentario()">Agregar comentario</button>
+      </div>
+      <div style="text-align:center; margin: 20px 0;">
+        <a href="https://tusitio.com" target="_blank" style="color:#ff0000; text-decoration:underline;">Visita la página maldita</a>
+      </div>
+      <ul id="listaComentarios" style="color:#ff0000; list-style:square; padding-left:20px;"></ul>
+    </div>
+  </div>
+
+  <div id="shop" class="tab">
+    <div id="payasos" class="subtab">
+      <h2>Comprar Payasos</h2>
+      <div class="shop-grid">
+        <div class="shop-item">
+          <img src="https://via.placeholder.com/150?text=Payaso" alt="Payaso">
+          <button onclick="confirmPurchase()">Comprar</button>
+        </div>
+
+        <!-- 🔧 CREADOR: Puedes agregar más compras aquí (Payasos)
+             Ejemplo:
+             <div class="shop-item">
+               <img src="URL_DE_TU_IMAGEN" alt="Payaso X">
+               <button onclick="confirmPurchase()">Comprar</button>
+             </div>
+        -->
+
+<div class="shop-item">
+  <img src="https://via.placeholder.com/150?text=Nuevo+Producto" alt="Nuevo Producto">
+  <button onclick="confirmPurchase()">Comprar</button>
+</div>
+
+
+      </div>
+      <ul class="terror-list">
+        <li>👁️ El payaso te observa incluso cuando cierras los ojos.</li>
+      </ul>
+    </div>
+
+    <div id="monstruos" class="subtab">
+      <h2>Comprar Monstruos</h2>
+      <div class="shop-grid">
+        <div class="shop-item">
+          <img src="https://via.placeholder.com/150?text=Monstruo" alt="Monstruo">
+          <button onclick="confirmPurchase()">Comprar</button>
+        </div>
+
+        <!-- 🔧 CREADOR: Puedes agregar más compras aquí (Monstruos)
+             Ejemplo:
+             <div class="shop-item">
+               <img src="URL_DE_TU_IMAGEN" alt="Monstruo X">
+               <button onclick="confirmPurchase()">Comprar</button>
+             </div>
+        -->
+      </div>
+      <ul class="terror-list">
+        <li>🦷 Este monstruo no duerme... solo espera.</li>
+        <li>🕸️ Cada clic es un susurro en la oscuridad.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="overlay-message"></div>
+
+  <script>
+    function showTab(tabId) {
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+
+      document.getElementById('main-subnav').style.display = tabId === 'main' ? 'flex' : 'none';
+      document.getElementById('shop-subnav').style.display = tabId === 'shop' ? 'flex' : 'none';
+
+      document.querySelectorAll('.subtab').forEach(sub => sub.classList.remove('active'));
+      if (tabId === 'main') showSubTab('inicio');
+      if (tabId === 'shop') showSubTab('payasos');
+    }
+
+    function showSubTab(subId) {
+      document.querySelectorAll('.subtab').forEach(sub => sub.classList.remove('active'));
+      document.getElementById(subId).classList.add('active');
+    }
+
+    function showOverlay(message) {
+      const overlay = document.getElementById('overlay-message');
+      overlay.innerText = message;
+      overlay.style.display = 'flex';
+      setTimeout(() => {
+        overlay.style.display = 'none';
+        showTab('main');
+      }, 5000);
+    }
+
+    function confirmPurchase() {
+      const confirmMsg = confirm("¿Estás seguro que quieres comprar este pedido?\nNo nos responsabilizamos de actos no permitidos.");
+      if (confirmMsg) {
+        showOverlay("Sistema operativo no permitido\nLocalización IP\nUbicación: Google\nDefensor activado");
+      }
+    }
+
+    function agregarComentario() {
+      const input = document.getElementById('comentarioInput');
+      const lista = document.getElementById('listaComentarios');
+      if (input.value.trim() !== "") {
+        const nuevoComentario = document.createElement('li');
+        nuevoComentario.textContent = input.value;
+        lista.appendChild(nuevoComentario);
+        input.value = "";
+      }
+    }
+  </script>
+
+</body>
+</html>
+
