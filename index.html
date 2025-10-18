@@ -98,32 +98,32 @@
 <body>
 
   <nav>
-    <button onclick="showTab('main')">Principal</button>
-    <button onclick="showTab('shop')">Compras</button>
+    <button onclick="showTab('main')">Main</button>
+    <button onclick="showTab('shop')">Shop</button>
   </nav>
 
   <div class="subnav" id="main-subnav">
-    <button onclick="showSubTab('inicio')">Inicio</button>
+    <button onclick="showSubTab('inicio')">Home</button>
     <button onclick="showSubTab('multimedia')">Multimedia</button>
-    <button onclick="showSubTab('mensaje')">Mensaje</button>
-    <button onclick="showSubTab('comentarios')">Comentarios</button>
+    <button onclick="showSubTab('mensaje')">Message</button>
+    <button onclick="showSubTab('comentarios')">Comments</button>
   </div>
 
   <div class="subnav" id="shop-subnav" style="display:none;">
-    <button onclick="showSubTab('payasos')">Payasos</button>
-    <button onclick="showSubTab('monstruos')">Monstruos</button>
+    <button onclick="showSubTab('payasos')">Clowns</button>
+    <button onclick="showSubTab('monstruos')">More</button>
   </div>
 
   <div id="main" class="tab active">
     <div id="inicio" class="subtab active">
-      <h1>Bienvenido a la Deep Web</h1>
-      <p>Prepárate para lo desconocido...</p>
+      <h1>welcome to the Darkweb</h1>
+      <p>Where are you?...</p>
     </div>
 
     <div id="multimedia" class="subtab">
       <h2>Multimedia Deep Web</h2>
       <div class="video-area">
-        <button onclick="showOverlay('Sistema operativo no permitido')">Ver Video</button>
+        <button onclick="showOverlay('Sistema operativo no permitido')">Watch video</button>
 
         <!-- 🔧 CREADOR: Puedes agregar más videos aquí
              Ejemplo:
@@ -133,21 +133,21 @@
     </div>
 
     <div id="mensaje" class="subtab">
-      <h2>Mensajes</h2>
+      <h2>Messages</h2>
       <div class="chat-area">
         <textarea placeholder="Escribe tu mensaje..."></textarea>
-        <button onclick="alert('Mensaje enviado')">Enviar mensaje</button>
+        <button onclick="alert('Mensaje enviado')">Send</button>
       </div>
     </div>
 
     <div id="comentarios" class="subtab">
-      <h2>Comentarios Terroríficos</h2>
+      <h2>ab</h2>
       <div class="chat-area">
         <textarea id="comentarioInput" placeholder="Escribe tu mensaje terrorífico..."></textarea>
-        <button onclick="agregarComentario()">Agregar comentario</button>
+        <button onclick="agregarComentario()">add comments</button>
       </div>
       <div style="text-align:center; margin: 20px 0;">
-        <a href="https://tusitio.com" target="_blank" style="color:#ff0000; text-decoration:underline;">Visita la página maldita</a>
+        <a href="https://tusitio.com" target="_blank" style="color:#ff0000; text-decoration:underline;">Visit tha cursed page</a>
       </div>
       <ul id="listaComentarios" style="color:#ff0000; list-style:square; padding-left:20px;"></ul>
     </div>
@@ -155,11 +155,11 @@
 
   <div id="shop" class="tab">
     <div id="payasos" class="subtab">
-      <h2>Comprar Payasos</h2>
+      <h2>Buy Clowns</h2>
       <div class="shop-grid">
         <div class="shop-item">
           <img src="p1.jpg" alt="Payaso">
-          <button onclick="confirmPurchase()">Comprar</button>
+          <button onclick="confirmPurchase()">Buy</button>
         </div>
 
         <!-- 🔧 CREADOR: Puedes agregar más compras aquí (Payasos)🤡
@@ -172,27 +172,27 @@
 
 <div class="shop-item">
   <img src="https://via.placeholder.com/150?text=Nuevo+Producto" alt="Nuevo Producto">
-  <button onclick="confirmPurchase()">Comprar</button>
+  <button onclick="confirmPurchase()">Buy</button>
 </div>
 
         <div class="shop-item">
   <img src="https://via.placeholder.com/150?text=Payaso malo" alt="Nuevo Producto">
-  <button onclick="confirmPurchase()">Comprar</button>
+  <button onclick="confirmPurchase()">Buy</button>
 </div>
 
 
       </div>
       <ul class="terror-list">
-        <li>👁️ El payaso te observa incluso cuando cierras los ojos.</li>
+        <li>👁️</li>
       </ul>
     </div>
 
     <div id="monstruos" class="subtab">
-      <h2>Comprar Monstruos</h2>
+      <h2>Buy More</h2>
       <div class="shop-grid">
         <div class="shop-item">
           <img src="https://via.placeholder.com/150?text=Monstruo" alt="Monstruo">
-          <button onclick="confirmPurchase()">Comprar</button>
+          <button onclick="confirmPurchase()">Buy</button>
         </div>
 
         <!-- 🔧 CREADOR: Puedes agregar más compras aquí (Monstruos)
@@ -204,8 +204,8 @@
         -->
       </div>
       <ul class="terror-list">
-        <li>🦷 Este monstruo no duerme... solo espera.</li>
-        <li>🕸️ Cada clic es un susurro en la oscuridad.</li>
+        <li>🦷</li>
+        <li>🕸️</li>
       </ul>
     </div>
   </div>
